@@ -8,32 +8,32 @@
         -:    3:#include<stdlib.h>
         -:    4:#include<time.h>
         -:    5:
-  4585322:    6:char inputChar()
+  3600451:    6:char inputChar()
         -:    7:{
         -:    8:    // Declare variables, for ASCII ignore non-input but include extended
-  4585322:    9:	int firstASCIIChar = 32;
-  4585322:   10:	int lastASCIIChar = 255;
+  3600451:    9:	int firstASCIIChar = 32;
+  3600451:   10:	int lastASCIIChar = 255;
         -:   11:
         -:   12:	// Intialize random character in range and return
-  4585322:   13:    return (rand() % (lastASCIIChar - (firstASCIIChar - 1))) + firstASCIIChar;
+  3600451:   13:    return (rand() % (lastASCIIChar - (firstASCIIChar - 1))) + firstASCIIChar;
         -:   14:}
         -:   15:
-  4585322:   16:char *inputString()
+  3600451:   16:char *inputString()
         -:   17:{
         -:   18:	// Declare variables, for ASCII consider only lower case letters
-  4585322:   19:	int firstASCIIChar = 97;
-  4585322:   20:	int lastASCIIChar = 122;
+  3600451:   19:	int firstASCIIChar = 97;
+  3600451:   20:	int lastASCIIChar = 122;
         -:   21:	static char myString[5];
         -:   22:	int i;
         -:   23:
         -:   24:	// Run loop to populate string
- 27511932:   25:	for (i = 0; i < 5; i++)
+ 21602706:   25:	for (i = 0; i < 5; i++)
         -:   26:	{
- 22926610:   27:		myString[i] = ((rand() % (lastASCIIChar - (firstASCIIChar - 1))) + firstASCIIChar);
+ 18002255:   27:		myString[i] = ((rand() % (lastASCIIChar - (firstASCIIChar - 1))) + firstASCIIChar);
         -:   28:	}
         -:   29:		
         -:   30:	// Return pointer to char array
-  4585322:   31:	return myString;
+  3600451:   31:	return myString;
         -:   32:}
         -:   33:
         1:   34:void testme()
@@ -44,29 +44,29 @@
         1:   39:  int state = 0;
         -:   40:  while (1)
         -:   41:  {
-  4585322:   42:    tcCount++;
-  4585322:   43:    c = inputChar();
-  4585322:   44:    s = inputString();
-  4585322:   45:    printf("Iteration %d: c = %c, s = %s, state = %d\n", tcCount, c, s, state);
+  3600451:   42:    tcCount++;
+  3600451:   43:    c = inputChar();
+  3600451:   44:    s = inputString();
+  3600451:   45:    printf("Iteration %d: c = %c, s = %s, state = %d\n", tcCount, c, s, state);
         -:   46:
-  4585322:   47:    if (c == '[' && state == 0) state = 1;
-  4585322:   48:    if (c == '(' && state == 1) state = 2;
-  4585322:   49:    if (c == '{' && state == 2) state = 3;
-  4585322:   50:    if (c == ' '&& state == 3) state = 4;
-  4585322:   51:    if (c == 'a' && state == 4) state = 5;
-  4585322:   52:    if (c == 'x' && state == 5) state = 6;
-  4585322:   53:    if (c == '}' && state == 6) state = 7;
-  4585322:   54:    if (c == ')' && state == 7) state = 8;
-  4585322:   55:    if (c == ']' && state == 8) state = 9;
-  4585322:   56:    if (s[0] == 'r' && s[1] == 'e'
-     6716:   57:       && s[2] == 's' && s[3] == 'e'
-       11:   58:       && s[4] == 't' && s[5] == '\0'
+  3600451:   47:    if (c == '[' && state == 0) state = 1;
+  3600451:   48:    if (c == '(' && state == 1) state = 2;
+  3600451:   49:    if (c == '{' && state == 2) state = 3;
+  3600451:   50:    if (c == ' '&& state == 3) state = 4;
+  3600451:   51:    if (c == 'a' && state == 4) state = 5;
+  3600451:   52:    if (c == 'x' && state == 5) state = 6;
+  3600451:   53:    if (c == '}' && state == 6) state = 7;
+  3600451:   54:    if (c == ')' && state == 7) state = 8;
+  3600451:   55:    if (c == ']' && state == 8) state = 9;
+  3600451:   56:    if (s[0] == 'r' && s[1] == 'e'
+     5378:   57:       && s[2] == 's' && s[3] == 'e'
+        9:   58:       && s[4] == 't' && s[5] == '\0'
         1:   59:       && state == 9)
         -:   60:    {
         1:   61:      printf("error ");
         1:   62:      exit(200);
         -:   63:    }
-  4585321:   64:  }
+  3600450:   64:  }
         -:   65:}
         -:   66:
         -:   67:
